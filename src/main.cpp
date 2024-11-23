@@ -6,7 +6,7 @@ std::string project_name = "project";
 // std::string project_version = "0.1.0";
 std::string cpp_standard = "17";
 
-void project_config(int argc, char** argv) {
+void project_config(int argc, char **argv) {
   if (argc >= 2) {
     project_name = std::string(argv[1]);
   }
@@ -17,7 +17,8 @@ void project_config(int argc, char** argv) {
 
   std::string cin_project_name;
   std::getline(std::cin, cin_project_name);
-  if (!cin_project_name.empty()) project_name = cin_project_name;
+  if (!cin_project_name.empty())
+    project_name = cin_project_name;
 
   // std::cout<<"Project version (defaults to "<<project_version<<") :";
   // std::string cin_project_version;
@@ -28,10 +29,11 @@ void project_config(int argc, char** argv) {
   std::cout << "C++ standand (defaults to " << cpp_standard << ") :";
   std::string cin_cpp_standard;
   std::getline(std::cin, cin_cpp_standard);
-  if (!cin_cpp_standard.empty()) cpp_standard = cin_cpp_standard;
+  if (!cin_cpp_standard.empty())
+    cpp_standard = cin_cpp_standard;
 }
 
-int main(int argc, char** argv) {
+int main(int argc, char **argv) {
   project_config(argc, argv);
 
   std::filesystem::path current_dir = std::filesystem::current_path();
@@ -64,7 +66,7 @@ int main(int argc, char** argv) {
     cmake << "cmake_minimum_required(VERSION 3.20)\nproject(" + project_name +
                  ")\n\nset(CMAKE_CXX_STANDARD " + cpp_standard +
                  ")\nset(CMAKE_CXX_STANDARD_REQUIRED "
-                 "ON)\n\ninclude_directories(${SOURCE_DIR}/"
+                 "ON)\n\ninclude_directories(${CMAKE_SOURCE_DIR}/"
                  "include)\n\nfile(GLOB PROJECT_SOURCES src/*.cpp)\n\n# if you "
                  "need\n# find_package()\n\nadd_executable(${PROJECT_NAME} "
                  "${PROJECT_SOURCES})\n\n# if you need\n# "
