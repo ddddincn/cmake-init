@@ -53,7 +53,8 @@ int main(int argc, char **argv) {
       std::filesystem::remove_all(project_path);
       return -1;
     }
-    main_cpp << "#include <iostream>\n\nint main() {\n\tstd::cout << \"hello " +
+    main_cpp << "#include <iostream>\n\nint main(int argc, char ** argv) "
+                "{\n\tstd::cout << \"hello " +
                     project_name + "!\" << std::endl;\n\n\treturn 0;\n}";
     main_cpp.close();
 
