@@ -67,7 +67,8 @@ int main(int argc, char **argv) {
                  ")\n\nset(CMAKE_CXX_STANDARD " + cpp_standard +
                  ")\nset(CMAKE_CXX_STANDARD_REQUIRED "
                  "ON)\n\ninclude_directories(${CMAKE_SOURCE_DIR}/"
-                 "include)\n\nfile(GLOB PROJECT_SOURCES src/*.cpp)\n\n# if you "
+                 "include)\n\naux_source_directory(${CMAKE_SOURCE_DIR}/src "
+                 "PROJECT_SOURCES)\n\n# if you "
                  "need\n# find_package()\n\nadd_executable(${PROJECT_NAME} "
                  "${PROJECT_SOURCES})\n\n# if you need\n# "
                  "target_link_libraries(${PROJECT_NAME} ...)";

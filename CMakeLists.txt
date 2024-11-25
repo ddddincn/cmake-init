@@ -4,9 +4,9 @@ project(cmake-init)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-include_directories(${SOURCE_DIR}/include)
+include_directories(${CMAKE_SOURCE_DIR}/include)
 
-file(GLOB PROJECT_SOURCES src/*.cpp)
+aux_source_directory(${CMAKE_SOURCE_DIR}/src PROJECT_SOURCES)
 
 # if you need
 # find_package()
