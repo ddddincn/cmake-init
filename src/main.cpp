@@ -59,7 +59,7 @@ int main(int argc, char **argv) {
   std::string project_path = current_dir.string() + "/" + project_name;
   if (std::filesystem::exists(project_path) &&
       std::filesystem::is_directory(project_path)) {
-    std::cerr << project_path << " is exists \n cloudn't create peojcet"
+    std::cerr << project_path << " is exists \n cloud not create project"
               << std::endl;
     return -1;
   } else {
